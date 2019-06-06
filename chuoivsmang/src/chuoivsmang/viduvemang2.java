@@ -4,7 +4,8 @@ public class viduvemang2 //  Xuất tổng, tìm giá trị nhỏ nhất và s�
 {
 	public static void main(String[] args)
 	{
-	    int n, sum = 0, tempSort;
+	    int n, sum = 0;
+	    float tbc;
 	    Scanner scanner = new Scanner(System.in);
 	         
 	    do {
@@ -14,7 +15,8 @@ public class viduvemang2 //  Xuất tổng, tìm giá trị nhỏ nhất và s�
 	         
 	    // khởi tạo và cấp phát bộ nhớ cho mảng
 	    int array[] = new int[n];
-	         
+	    for (int j = 0; j < n; j++)
+	    {    
 	    System.out.println("Nhập các phần tử cho mảng: ");
 	    for (int i = 0; i < n; i++)
 	    {
@@ -29,34 +31,17 @@ public class viduvemang2 //  Xuất tổng, tìm giá trị nhỏ nhất và s�
 	    }
 	         
 	    // tính tổng các phần tử có trong mảng
-	    for (int i = 0; i < n; i++) {
+	    for (int i = 0; i < n; i++)
+	    {
 	        sum += array[i];
 	    }
 	    System.out.println("\nTổng các phần tử có trong mảng = " + sum);
 	         
-	    // sắp xếp theo thứ tự giảm dần
-	    for (int i = 0; i < n - 1; i++)
-	    {
-	        for (int j = i + 1; j <= n - 1; j++)
-	        {
-	            if (array[i] < array[j])
-	            {
-	                tempSort = array[i];
-	                array[i] = array[j];
-	                array[j] = tempSort;
-	            }
-	        }
+	   // tinhs trung binh
+	    tbc = (float)sum/n;
+	    
+	    System.out.println("\nTrung bình cộng các phần tử của mảng là : = " + tbc);
 	    }
-	    System.out.println("Mảng sau khi sắp xếp là: ");
-	    for (int i = 0; i < n; i++)
-	    {
-	        System.out.print(array[i] + "\t");
-	    }
-	         
-	    // tìm phần tử nhỏ nhất
-	    // sau khi sắp xếp theo thứ tự giảm dần 
-	    // thì phần tử nhỏ nhất là phần tử cuối cùng trong mảng
-	    System.out.println("\nPhần tử nhỏ nhất trong mảng là " + array[n - 1]);
 	    scanner.close();
 	}
 
